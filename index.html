@@ -1,0 +1,437 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>연습</title>   
+    <style>
+        header{
+            background-color: #011F26;
+            text-align: center;
+            padding-top: 3%;
+            padding-bottom: 3%;
+        }
+        nav{text-align: center; margin-top: -10%;}
+        footer{
+            background-color: #f2f2f2;
+            margin-top: 30px;
+            padding-top: 40px;
+            padding-bottom: 40px;
+        }
+        .btn10, .btn11{
+            padding: 15px 100px;
+            margin: 10px 4px;
+            color: #fff;
+            font-family: sans-serif;
+            text-transform: uppercase;
+            text-align: center;
+            position: relative;
+            text-decoration: none;
+            display:inline-block;
+            top: 40px;
+            font-family: "proxima-nova", sans-serif;
+            font-weight: 500;
+            font-size: 13px;
+            text-transform: uppercase!important;
+            letter-spacing: 2px;
+            color: #fff;
+            cursor: hand;
+            text-align: center;
+            text-transform: capitalize;
+            border: 1px solid #fff;
+            border-radius:50px;
+            position: relative;
+            overflow: hidden!important;
+            -webkit-transition: all .3s ease-in-out;
+            -moz-transition: all .3s ease-in-out;
+            -o-transition: all .3s ease-in-out;
+            transition: all .3s ease-in-out;
+            background: transparent!important;
+            z-index:10;
+        }
+        .btn11{margin-left: 300px;}
+        .btn10:hover{ border: 1px solid #071982; color: #80ffd3!important;}
+        .btn10::before {
+            content: '';
+            width: 0%;
+            height: 100%;
+            display: block;
+            background: #071982;
+            position: absolute;
+	        -ms-transform: skewX(-20deg);
+            -webkit-transform: skewX(-20deg); 
+            transform: skewX(-20deg);   
+            left: -10%;
+            opacity: 1;
+            top: 0;
+            z-index: -12;
+            -moz-transition: all .7s cubic-bezier(0.77, 0, 0.175, 1);
+            -o-transition: all .7s cubic-bezier(0.77, 0, 0.175, 1);
+            -webkit-transition: all .7s cubic-bezier(0.77, 0, 0.175, 1);
+            transition: all .7s cubic-bezier(0.77, 0, 0.175, 1);
+	        box-shadow:2px 0px 14px rgba(0,0,0,.6);
+        } 
+        .btn10::after {
+            content: '';
+            width: 0%;
+            height: 100%;
+            display: block;
+            background: #80ffd3;
+            position: absolute;
+	        -ms-transform: skewX(-20deg);
+            -webkit-transform: skewX(-20deg); 
+            transform: skewX(-20deg);   
+            left: -10%;
+            opacity: 0;
+            top: 0;
+            z-index: -15;
+            -webkit-transition: all .94s cubic-bezier(.2,.95,.57,.99);
+            -moz-transition: all .4s cubic-bezier(.2,.95,.57,.99);
+            -o-transition: all .4s cubic-bezier(.2,.95,.57,.99);
+            transition: all .4s cubic-bezier(.2,.95,.57,.99);
+            box-shadow: 2px 0px 14px rgba(0,0,0,.6);
+        }
+        .btn10:hover::before, .btn1O:hover::before{ opacity:1; width: 116%;}
+        .btn10:hover::after, .btn1O:hover::after{ opacity:1; width: 120%;}
+        .btn11:hover{ border: 1px solid #071982; color: #80ffd3!important;}
+        .btn11::before {
+            content: '';
+            width: 0%;
+            height: 100%;
+            display: block;
+            background: #071982;
+            position: absolute;
+	        -ms-transform: skewX(-20deg);
+            -webkit-transform: skewX(-20deg); 
+            transform: skewX(-20deg);   
+            left: -10%;
+            opacity: 1;
+            top: 0;
+            z-index: -12;
+            -moz-transition: all .7s cubic-bezier(0.77, 0, 0.175, 1);
+            -o-transition: all .7s cubic-bezier(0.77, 0, 0.175, 1);
+            -webkit-transition: all .7s cubic-bezier(0.77, 0, 0.175, 1);
+            transition: all .7s cubic-bezier(0.77, 0, 0.175, 1);
+	        box-shadow:2px 0px 14px rgba(0,0,0,.6);
+        } 
+        .btn11::after {
+            content: '';
+            width: 0%;
+            height: 100%;
+            display: block;
+            background: #80ffd3;
+            position: absolute;
+	        -ms-transform: skewX(-20deg);
+            -webkit-transform: skewX(-20deg); 
+            transform: skewX(-20deg);   
+            left: -10%;
+            opacity: 0;
+            top: 0;
+            z-index: -15;
+            -webkit-transition: all .94s cubic-bezier(.2,.95,.57,.99);
+            -moz-transition: all .4s cubic-bezier(.2,.95,.57,.99);
+            -o-transition: all .4s cubic-bezier(.2,.95,.57,.99);
+            transition: all .4s cubic-bezier(.2,.95,.57,.99);
+            box-shadow: 2px 0px 14px rgba(0,0,0,.6);
+        }
+        .btn11:hover::before, .btn1O:hover::before{opacity:1; width: 116%;}
+        .btn11:hover::after, .btn1O:hover::after{ opacity:1; width: 120%;}
+        .title{
+            padding: 15px 30px;
+            color: #fff;
+            font-family: sans-serif;
+            font-size: 40px;
+            text-transform: uppercase;
+            text-align: center;
+            position: relative;
+            text-decoration: none;
+            display:inline-block;
+        }
+        .title::before {
+            content: '';
+            position: absolute;
+            bottom: 0%;
+            left: 0px;
+            width: 100%;
+            height: 1px;
+            background: #6098FF;
+            display: block;
+            -webkit-transform-origin: right top;
+            -ms-transform-origin: right top;
+            transform-origin: right top;
+            -webkit-transform: scale(0, 1);
+            -ms-transform: scale(0, 1);
+            transform: scale(0, 1);
+            -webkit-transition: transform 0.4s cubic-bezier(1, 0, 0, 1);
+            transition: transform 0.4s cubic-bezier(1, 0, 0, 1)
+        }
+        .title:hover::before {
+            -webkit-transform-origin: left top;
+            -ms-transform-origin: left top;
+            transform-origin: left top;
+            -webkit-transform: scale(1, 1);
+            -ms-transform: scale(1, 1);
+            transform: scale(1, 1)
+        }
+        *{margin:0;padding:0;}
+            ul,li{list-style:none;}
+            .slide{height:400px;overflow:hidden; margin:120px 100px;}
+            .slide ul{width:calc(100% * 7);display:flex;animation:slide 70s infinite;} /* slide를 30초동안 진행하며 무한반복 함 */
+            .slide li{width:calc(100% / 7);height:400px;}
+            .slide li:nth-child(1){background:#faa;}
+            .slide li:nth-child(2){background:#faa;}
+            .slide li:nth-child(3){background:#afa;}
+            .slide li:nth-child(4){background:#aaf;}
+            .slide li:nth-child(5){background:#ffa;}
+            .slide li:nth-child(6){background:#faa;}
+            .slide li:nth-child(7){background:#aaf;}
+        @keyframes slide {
+          0% {margin-left:0;} /* 0 ~ 10  : 정지 */
+          5% {margin-left:0;} /* 10 ~ 25 : 변이 */
+          15% {margin-left:-100%;} /* 25 ~ 35 : 정지 */
+          20% {margin-left:-100%;} /* 35 ~ 50 : 변이 */
+          30% {margin-left:-200%;}
+          35% {margin-left:-200%;}
+          45% {margin-left:-300%;}
+          50% {margin-left:-300%;}
+          60% {margin-left:-400%;}
+          65% {margin-left:-400%;}
+          75% {margin-left:-500%;}
+          80% {margin-left:-500%;}
+          85% {margin-left:-600%;}
+          90% {margin-left:-600%;}
+          100% {margin-left:0;}
+        }
+        .slide_img{
+            width:100%; height:100%;
+            object-fit: contain;
+            margin-left: 10px;
+        }
+        .slide_none{
+            margin: 20px;
+            height: 356px;
+            border: 2px solid #f2f2f2;
+            border-radius: 10px;
+            background-color: #f2f2f2;
+            opacity: 0.7;
+        }
+        .slide_name{
+            text-align: center;
+            margin: 20px 0px;
+            font-style: italic;
+        }
+        .slide_hr{
+            margin: 10px;
+            height: 0.6px;
+            background-color: rgb(37, 37, 37);
+        }
+        .slide_con{margin-top: 50px; margin-left: 80px;}
+        .slide_cont{margin-top: 40px; margin-left: 80px;}
+        .footer{margin:auto; color: rgb(182, 182, 182);}
+        .sns{margin-left:20px; margin-right: 20px;}
+    </style>
+</head>
+<body>
+    <header>
+        <a href="index.html" class="title">
+            <span>홈페이지</span>
+        </a>
+    </header>
+    <nav>
+        <a href="#0" class="btn10">
+            <span>오너 소개</span>
+            <div class="transition"></div>
+        </a>
+        <a href="character.html" class="btn10">
+            <span>캐릭터 일람</span>
+            <div class="transition"></div>
+        </a>
+        <a href="#0" class="btn11">
+            <span>캐릭터 생일</span>
+            <div class="transition"></div>
+        </a>
+        <a href="#0" class="btn10">
+            <span>캐릭터 로그</span>
+            <div class="transition"></div>
+        </a>
+    </nav>
+    <main>
+        <div class="slide">
+            <ul>
+                <li>
+                    <div style="width: 100%; height: 100%;">
+                        <div style="width:70%; height:100%; float:right;">
+                            <div class="slide_none">
+                                <div>
+                                <h2 class="slide_name">"한마디"</h2>
+                                <hr class="slide_hr">
+                                </div>
+                                <div style="width: 40%; float: left;">
+                                <h3 class="slide_con">Name :</h3>
+                                <h3 class="slide_cont">Age :</h3>
+                                <h3 class="slide_cont">Weight/Height :</h3>
+                                </div>
+                                <div style="width: 60%; float: left;">
+                                <h3 class="slide_con">character :</h3>
+                                </div>
+                            </div>
+                        </div>
+                        <div style="width:30%; height:100%;">
+                            <img class="slide_img" src="임시.png" width="100%" height="100%">
+                        </div>
+                    </div>
+                </li>
+                <li>
+                    <div style="width: 100%; height: 100%;">
+                        <div style="width:70%; height:100%; float:right;">
+                            <div class="slide_none">
+                                <div>
+                                <h2 class="slide_name">"한마디"</h2>
+                                <hr class="slide_hr">
+                                </div>
+                                <div style="width: 40%; float: left;">
+                                <h3 class="slide_con">Name :</h3>
+                                <h3 class="slide_cont">Age :</h3>
+                                <h3 class="slide_cont">Weight/Height :</h3>
+                                </div>
+                                <div style="width: 60%; float: left;">
+                                <h3 class="slide_con">character :</h3>
+                                </div>
+                            </div>
+                        </div>
+                        <div style="width:30%; height:100%;">
+                            <img class="slide_img" src="임시.png" width="100%" height="100%">
+                        </div>
+                    </div>
+                </li>
+                <li>
+                    <div style="width: 100%; height: 100%;">
+                        <div style="width:70%; height:100%; float:right;">
+                            <div class="slide_none">
+                                <div>
+                                <h2 class="slide_name">"한마디"</h2>
+                                <hr class="slide_hr">
+                                </div>
+                                <div style="width: 40%; float: left;">
+                                <h3 class="slide_con">Name :</h3>
+                                <h3 class="slide_cont">Age :</h3>
+                                <h3 class="slide_cont">Weight/Height :</h3>
+                                </div>
+                                <div style="width: 60%; float: left;">
+                                <h3 class="slide_con">character :</h3>
+                                </div>
+                            </div>
+                        </div>
+                        <div style="width:30%; height:100%;">
+                            <img class="slide_img" src="임시.png" width="100%" height="100%">
+                        </div>
+                    </div>
+                </li>
+                <li>
+                    <div style="width: 100%; height: 100%;">
+                        <div style="width:70%; height:100%; float:right;">
+                            <div class="slide_none">
+                                <div>
+                                <h2 class="slide_name">"한마디"</h2>
+                                <hr class="slide_hr">
+                                </div>
+                                <div style="width: 40%; float: left;">
+                                <h3 class="slide_con">Name :</h3>
+                                <h3 class="slide_cont">Age :</h3>
+                                <h3 class="slide_cont">Weight/Height :</h3>
+                                </div>
+                                <div style="width: 60%; float: left;">
+                                <h3 class="slide_con">character :</h3>
+                                </div>
+                            </div>
+                        </div>
+                        <div style="width:30%; height:100%;">
+                            <img class="slide_img" src="임시.png" width="100%" height="100%">
+                        </div>
+                    </div>
+                </li>
+                <li>
+                    <div style="width: 100%; height: 100%;">
+                        <div style="width:70%; height:100%; float:right;">
+                            <div class="slide_none">
+                                <div>
+                                <h2 class="slide_name">"한마디"</h2>
+                                <hr class="slide_hr">
+                                </div>
+                                <div style="width: 40%; float: left;">
+                                <h3 class="slide_con">Name :</h3>
+                                <h3 class="slide_cont">Age :</h3>
+                                <h3 class="slide_cont">Weight/Height :</h3>
+                                </div>
+                                <div style="width: 60%; float: left;">
+                                <h3 class="slide_con">character :</h3>
+                                </div>
+                            </div>
+                        </div>
+                        <div style="width:30%; height:100%;">
+                            <img class="slide_img" src="임시.png" width="100%" height="100%">
+                        </div>
+                    </div>
+                </li>
+                <li>
+                    <div style="width: 100%; height: 100%;">
+                        <div style="width:70%; height:100%; float:right;">
+                            <div class="slide_none">
+                                <div>
+                                <h2 class="slide_name">"한마디"</h2>
+                                <hr class="slide_hr">
+                                </div>
+                                <div style="width: 40%; float: left;">
+                                <h3 class="slide_con">Name :</h3>
+                                <h3 class="slide_cont">Age :</h3>
+                                <h3 class="slide_cont">Weight/Height :</h3>
+                                </div>
+                                <div style="width: 60%; float: left;">
+                                <h3 class="slide_con">character :</h3>
+                                </div>
+                            </div>
+                        </div>
+                        <div style="width:30%; height:100%;">
+                            <img class="slide_img" src="임시.png" width="100%" height="100%">
+                        </div>
+                    </div>
+                </li>
+                <li>
+                    <div style="width: 100%; height: 100%;">
+                        <div style="width:70%; height:100%; float:right;">
+                            <div class="slide_none">
+                                <div>
+                                <h2 class="slide_name">"한마디"</h2>
+                                <hr class="slide_hr">
+                                </div>
+                                <div style="width: 40%; float: left;">
+                                <h3 class="slide_con">Name :</h3>
+                                <h3 class="slide_cont">Age :</h3>
+                                <h3 class="slide_cont">Weight/Height :</h3>
+                                </div>
+                                <div style="width: 60%; float: left;">
+                                <h3 class="slide_con">character :</h3>
+                                </div>
+                            </div>
+                        </div>
+                        <div style="width:30%; height:100%;">
+                            <img class="slide_img" src="임시.png" width="100%" height="100%">
+                        </div>
+                    </div>
+                </li>
+            </ul>
+          </div>
+    </main>
+    <footer>
+        <table class="footer">
+            <tr>
+                <td><div class="sns">트위터</div></td>
+                <td><div class="sns">티스토리</div></td>
+                <td><div class="sns">인스타</div></td>
+                <td><div class="sns">오픈카톡</div></td>
+            </tr>
+        </table>
+    </footer>
+</body>
+</html>
