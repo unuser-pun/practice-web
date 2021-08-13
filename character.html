@@ -1,0 +1,383 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>연습</title>   
+    <style>
+        *{margin:0;padding:0;}
+        body{
+            -ms-user-select: none; 
+            -moz-user-select: -moz-none;
+            -khtml-user-select: none;
+            -webkit-user-select: none;
+            user-select: none;
+        }
+        header{
+            background-color: #011F26;
+            text-align: center;
+            padding-top: 3%;
+            padding-bottom: 3%;
+        }
+        nav{
+            text-align: center;
+            margin-top: -10%;
+        }
+        footer{
+            background-color: #f2f2f2;
+            margin-top: 30px;
+            padding-top: 40px;
+            padding-bottom: 40px;
+        }
+        .btn10, .btn11{
+            padding: 15px 100px;
+            margin: 10px 4px;
+            color: #fff;
+            font-family: sans-serif;
+            text-transform: uppercase;
+            text-align: center;
+            position: relative;
+            text-decoration: none;
+            display:inline-block;
+            top: 40px;
+            font-family: "proxima-nova", sans-serif;
+            font-weight: 500;
+            font-size: 13px;
+            text-transform: uppercase!important;
+            letter-spacing: 2px;
+            color: #fff;
+            cursor: hand;
+            text-align: center;
+            text-transform: capitalize;
+            border: 1px solid #fff;
+            border-radius:50px;
+            position: relative;
+            overflow: hidden!important;
+            -webkit-transition: all .3s ease-in-out;
+            -moz-transition: all .3s ease-in-out;
+            -o-transition: all .3s ease-in-out;
+            transition: all .3s ease-in-out;
+            background: transparent!important;
+            z-index:10;
+        }
+        .btn11{
+            margin-left: 300px;
+        }
+        .btn10:hover{
+            border: 1px solid #071982;
+	        color: #80ffd3!important;
+        }
+        .btn10::before {
+            content: '';
+            width: 0%;
+            height: 100%;
+            display: block;
+            background: #071982;
+            position: absolute;
+	        -ms-transform: skewX(-20deg);
+            -webkit-transform: skewX(-20deg); 
+            transform: skewX(-20deg);   
+            left: -10%;
+            opacity: 1;
+            top: 0;
+            z-index: -12;
+            -moz-transition: all .7s cubic-bezier(0.77, 0, 0.175, 1);
+            -o-transition: all .7s cubic-bezier(0.77, 0, 0.175, 1);
+            -webkit-transition: all .7s cubic-bezier(0.77, 0, 0.175, 1);
+            transition: all .7s cubic-bezier(0.77, 0, 0.175, 1);
+	        box-shadow:2px 0px 14px rgba(0,0,0,.6);
+        } 
+        .btn10::after {
+            content: '';
+            width: 0%;
+            height: 100%;
+            display: block;
+            background: #80ffd3;
+            position: absolute;
+	        -ms-transform: skewX(-20deg);
+            -webkit-transform: skewX(-20deg); 
+            transform: skewX(-20deg);   
+            left: -10%;
+            opacity: 0;
+            top: 0;
+            z-index: -15;
+            -webkit-transition: all .94s cubic-bezier(.2,.95,.57,.99);
+            -moz-transition: all .4s cubic-bezier(.2,.95,.57,.99);
+            -o-transition: all .4s cubic-bezier(.2,.95,.57,.99);
+            transition: all .4s cubic-bezier(.2,.95,.57,.99);
+            box-shadow: 2px 0px 14px rgba(0,0,0,.6);
+        }
+        .btn10:hover::before, .btn1O:hover::before{opacity:1; width: 116%;}
+        .btn10:hover::after, .btn1O:hover::after{opacity:1; width: 120%;}
+        .btn11:hover{border: 1px solid #071982; color: #80ffd3!important;}
+        .btn11::before {
+            content: '';
+            width: 0%;
+            height: 100%;
+            display: block;
+            background: #071982;
+            position: absolute;
+	        -ms-transform: skewX(-20deg);
+            -webkit-transform: skewX(-20deg); 
+            transform: skewX(-20deg);   
+            left: -10%;
+            opacity: 1;
+            top: 0;
+            z-index: -12;
+            -moz-transition: all .7s cubic-bezier(0.77, 0, 0.175, 1);
+            -o-transition: all .7s cubic-bezier(0.77, 0, 0.175, 1);
+            -webkit-transition: all .7s cubic-bezier(0.77, 0, 0.175, 1);
+            transition: all .7s cubic-bezier(0.77, 0, 0.175, 1);
+	        box-shadow:2px 0px 14px rgba(0,0,0,.6);
+        } 
+        .btn11::after {
+            content: '';
+            width: 0%;
+            height: 100%;
+            display: block;
+            background: #80ffd3;
+            position: absolute;
+	        -ms-transform: skewX(-20deg);
+            -webkit-transform: skewX(-20deg); 
+            transform: skewX(-20deg);   
+            left: -10%;
+            opacity: 0;
+            top: 0;
+            z-index: -15;
+            -webkit-transition: all .94s cubic-bezier(.2,.95,.57,.99);
+            -moz-transition: all .4s cubic-bezier(.2,.95,.57,.99);
+            -o-transition: all .4s cubic-bezier(.2,.95,.57,.99);
+            transition: all .4s cubic-bezier(.2,.95,.57,.99);
+            box-shadow: 2px 0px 14px rgba(0,0,0,.6);
+        }
+        .btn11:hover::before, .btn1O:hover::before{opacity:1; width: 116%;}
+        .btn11:hover::after, .btn1O:hover::after{opacity:1; width: 120%;}
+        .title{
+            padding: 15px 30px;
+            color: #fff;
+            font-family: sans-serif;
+            font-size: 40px;
+            text-transform: uppercase;
+            text-align: center;
+            position: relative;
+            text-decoration: none;
+            display:inline-block;
+        }
+        .title::before {
+            content: '';
+            position: absolute;
+            bottom: 0%;
+            left: 0px;
+            width: 100%;
+            height: 1px;
+            background: #6098FF;
+            display: block;
+            -webkit-transform-origin: right top;
+            -ms-transform-origin: right top;
+            transform-origin: right top;
+            -webkit-transform: scale(0, 1);
+            -ms-transform: scale(0, 1);
+            transform: scale(0, 1);
+            -webkit-transition: transform 0.4s cubic-bezier(1, 0, 0, 1);
+            transition: transform 0.4s cubic-bezier(1, 0, 0, 1)
+        }
+        .title:hover::before {
+            -webkit-transform-origin: left top;
+            -ms-transform-origin: left top;
+            transform-origin: left top;
+            -webkit-transform: scale(1, 1);
+            -ms-transform: scale(1, 1);
+            transform: scale(1, 1)
+        }
+        .card{
+            margin: 0px 0px 30px;
+            margin-left: 20px;
+            max-width: 300px;
+            max-height: 700px;
+            border: 1px solid #d4d4d4;
+            border-radius: 20px;
+            background-color: #6098FF;
+            overflow: hidden;
+        }
+        .card1{
+            margin: 0px 20px 30px;
+            max-width: 300px;
+            max-height: 700px;
+            border: 1px solid #d4d4d4;
+            border-radius: 20px;
+            background-color: #6098FF;
+            overflow: hidden;
+        }
+        .card_back{
+            margin: 1% 4% 4%;
+            border: 1px solid #fff;
+            border-radius: 3%;
+            background-color: #fff;
+        }
+        .card:hover{
+            cursor: pointer;
+        }
+        .photo_div{margin: 4%;}
+        .photo_img{
+            width: 100%; height: 100%;
+            object-fit: contain;
+            border-radius: 50%;
+            border: 1px solid #fff;
+            background-color: #fff;
+        }
+        .chara_hr{margin:5%; height:0.1px; background-color: rgb(94, 94, 94);}
+        .name{margin: 5% 4% 0%; text-align: center; background-color: white;}
+        .content{
+            margin: 0% 6% 5%;
+            text-align:justify;
+            height: 150px;
+            overflow: scroll;
+        }
+        .content::-webkit-scrollbar{width: 0px; height: 0px;}
+        .chara_table{margin: 11% 7% 5%;}
+        .footer{margin:auto; color: rgb(182, 182, 182);}
+        .sns{margin-left:20px; margin-right: 20px;}
+    </style>
+</head>
+<body>
+    <header>
+        <a href="practice.html" class="title">
+            <span>홈페이지</span>
+        </a>
+    </header>
+    <nav>
+        <a href="#0" class="btn10">
+            <span>오너 소개</span>
+            <div class="transition"></div>
+        </a>
+        <a href="character.html" class="btn10">
+            <span>캐릭터 일람</span>
+            <div class="transition"></div>
+        </a>
+        <a href="#0" class="btn11">
+            <span>캐릭터 생일</span>
+            <div class="transition"></div>
+        </a>
+        <a href="#0" class="btn10">
+            <span>캐릭터 로그</span>
+            <div class="transition"></div>
+        </a>
+    </nav>
+    <main>
+        <table class="chara_table">
+            <tr>
+            <td><div class="card">
+                <div class="photo_div"><img src="임시.png" class="photo_img"></div>
+                <div class="card_back">
+                <div class="name">"한마디와라랄라라라라랄"<hr class="chara_hr"></div>
+                <div class="content">이름 등 대강의 소개 및 내용 어쩌구 저쩌구 솰라솰라 욜라욜라
+                어쩌구 저쩌구 솰라솰라 욜라욜라어쩌구 저쩌구 솰라솰라 욜라욜라어쩌구 저쩌구 솰라솰라 욜라욜라
+                어쩌구 저쩌구 솰라솰라 욜라욜라어쩌구 저쩌구 솰라솰라 욜라욜라어쩌구 저쩌구 솰라솰라 욜라욜라
+                어쩌구 저쩌구 솰라솰라 욜라욜라어쩌구 저쩌구 솰라솰라 욜라욜라어쩌구 저쩌구 솰라솰라 욜라욜라
+                어쩌구 저쩌구 솰라솰라 욜라욜라어쩌구 저쩌구 솰라솰라 욜라욜라어쩌구 저쩌구 솰라솰라 욜라욜라 끝
+                </div>
+                </div>
+            </div></td>
+            <td><div class="card">
+                <div class="photo_div"><img src="임시.png" class="photo_img"></div>
+                <div class="card_back">
+                <div class="name">"한마디와라랄라라라라랄"<hr class="chara_hr"></div>
+                <div class="content">이름 등 대강의 소개 및 내용 어쩌구 저쩌구 솰라솰라 욜라욜라
+                어쩌구 저쩌구 솰라솰라 욜라욜라어쩌구 저쩌구 솰라솰라 욜라욜라어쩌구 저쩌구 솰라솰라 욜라욜라
+                어쩌구 저쩌구 솰라솰라 욜라욜라어쩌구 저쩌구 솰라솰라 욜라욜라어쩌구 저쩌구 솰라솰라 욜라욜라
+                어쩌구 저쩌구 솰라솰라 욜라욜라어쩌구 저쩌구 솰라솰라 욜라욜라어쩌구 저쩌구 솰라솰라 욜라욜라
+                어쩌구 저쩌구 솰라솰라 욜라욜라어쩌구 저쩌구 솰라솰라 욜라욜라어쩌구 저쩌구 솰라솰라 욜라욜라 끝
+                </div>
+                </div>
+            </div></td>
+            <td><div class="card">
+                <div class="photo_div"><img src="임시.png" class="photo_img"></div>
+                <div class="card_back">
+                <div class="name">"한마디와라랄라라라라랄"<hr class="chara_hr"></div>
+                <div class="content">이름 등 대강의 소개 및 내용 어쩌구 저쩌구 솰라솰라 욜라욜라
+                어쩌구 저쩌구 솰라솰라 욜라욜라어쩌구 저쩌구 솰라솰라 욜라욜라어쩌구 저쩌구 솰라솰라 욜라욜라
+                어쩌구 저쩌구 솰라솰라 욜라욜라어쩌구 저쩌구 솰라솰라 욜라욜라어쩌구 저쩌구 솰라솰라 욜라욜라
+                어쩌구 저쩌구 솰라솰라 욜라욜라어쩌구 저쩌구 솰라솰라 욜라욜라어쩌구 저쩌구 솰라솰라 욜라욜라
+                어쩌구 저쩌구 솰라솰라 욜라욜라어쩌구 저쩌구 솰라솰라 욜라욜라어쩌구 저쩌구 솰라솰라 욜라욜라 끝
+                </div>
+                </div>
+            </div></td>
+            <td><div class="card1">
+                <div class="photo_div"><img src="임시.png" class="photo_img"></div>
+                <div class="card_back">
+                <div class="name">"한마디와라랄라라라라랄"<hr class="chara_hr"></div>
+                <div class="content">이름 등 대강의 소개 및 내용 어쩌구 저쩌구 솰라솰라 욜라욜라
+                어쩌구 저쩌구 솰라솰라 욜라욜라어쩌구 저쩌구 솰라솰라 욜라욜라어쩌구 저쩌구 솰라솰라 욜라욜라
+                어쩌구 저쩌구 솰라솰라 욜라욜라어쩌구 저쩌구 솰라솰라 욜라욜라어쩌구 저쩌구 솰라솰라 욜라욜라
+                어쩌구 저쩌구 솰라솰라 욜라욜라어쩌구 저쩌구 솰라솰라 욜라욜라어쩌구 저쩌구 솰라솰라 욜라욜라
+                어쩌구 저쩌구 솰라솰라 욜라욜라어쩌구 저쩌구 솰라솰라 욜라욜라어쩌구 저쩌구 솰라솰라 욜라욜라 끝
+                </div>
+                </div>
+            </div></td>
+            </tr>
+            <tr>
+            <td><div class="card">
+                <div class="photo_div"><img src="임시.png" class="photo_img"></div>
+                <div class="card_back">
+                <div class="name">"한마디와라랄라라라라랄"<hr class="chara_hr"></div>
+                <div class="content">이름 등 대강의 소개 및 내용 어쩌구 저쩌구 솰라솰라 욜라욜라
+                어쩌구 저쩌구 솰라솰라 욜라욜라어쩌구 저쩌구 솰라솰라 욜라욜라어쩌구 저쩌구 솰라솰라 욜라욜라
+                어쩌구 저쩌구 솰라솰라 욜라욜라어쩌구 저쩌구 솰라솰라 욜라욜라어쩌구 저쩌구 솰라솰라 욜라욜라
+                어쩌구 저쩌구 솰라솰라 욜라욜라어쩌구 저쩌구 솰라솰라 욜라욜라어쩌구 저쩌구 솰라솰라 욜라욜라
+                어쩌구 저쩌구 솰라솰라 욜라욜라어쩌구 저쩌구 솰라솰라 욜라욜라어쩌구 저쩌구 솰라솰라 욜라욜라 끝
+                </div>
+                </div>
+            </div></td>
+            <td><div class="card">
+                <div class="photo_div"><img src="임시.png" class="photo_img"></div>
+                <div class="card_back">
+                <div class="name">"한마디와라랄라라라라랄"<hr class="chara_hr"></div>
+                <div class="content">이름 등 대강의 소개 및 내용 어쩌구 저쩌구 솰라솰라 욜라욜라
+                어쩌구 저쩌구 솰라솰라 욜라욜라어쩌구 저쩌구 솰라솰라 욜라욜라어쩌구 저쩌구 솰라솰라 욜라욜라
+                어쩌구 저쩌구 솰라솰라 욜라욜라어쩌구 저쩌구 솰라솰라 욜라욜라어쩌구 저쩌구 솰라솰라 욜라욜라
+                어쩌구 저쩌구 솰라솰라 욜라욜라어쩌구 저쩌구 솰라솰라 욜라욜라어쩌구 저쩌구 솰라솰라 욜라욜라
+                어쩌구 저쩌구 솰라솰라 욜라욜라어쩌구 저쩌구 솰라솰라 욜라욜라어쩌구 저쩌구 솰라솰라 욜라욜라 끝
+                </div>
+                </div>
+            </div></td>
+            <td><div class="card">
+                <div class="photo_div"><img src="임시.png" class="photo_img"></div>
+                <div class="card_back">
+                <div class="name">"한마디와라랄라라라라랄"<hr class="chara_hr"></div>
+                <div class="content">이름 등 대강의 소개 및 내용 어쩌구 저쩌구 솰라솰라 욜라욜라
+                어쩌구 저쩌구 솰라솰라 욜라욜라어쩌구 저쩌구 솰라솰라 욜라욜라어쩌구 저쩌구 솰라솰라 욜라욜라
+                어쩌구 저쩌구 솰라솰라 욜라욜라어쩌구 저쩌구 솰라솰라 욜라욜라어쩌구 저쩌구 솰라솰라 욜라욜라
+                어쩌구 저쩌구 솰라솰라 욜라욜라어쩌구 저쩌구 솰라솰라 욜라욜라어쩌구 저쩌구 솰라솰라 욜라욜라
+                어쩌구 저쩌구 솰라솰라 욜라욜라어쩌구 저쩌구 솰라솰라 욜라욜라어쩌구 저쩌구 솰라솰라 욜라욜라 끝
+                </div>
+                </div>
+            </div></td>
+            <td><div class="card1">
+                <div class="photo_div"><img src="임시.png" class="photo_img"></div>
+                <div class="card_back">
+                <div class="name">"한마디와라랄라라라라랄"<hr class="chara_hr"></div>
+                <div class="content">이름 등 대강의 소개 및 내용 어쩌구 저쩌구 솰라솰라 욜라욜라
+                어쩌구 저쩌구 솰라솰라 욜라욜라어쩌구 저쩌구 솰라솰라 욜라욜라어쩌구 저쩌구 솰라솰라 욜라욜라
+                어쩌구 저쩌구 솰라솰라 욜라욜라어쩌구 저쩌구 솰라솰라 욜라욜라어쩌구 저쩌구 솰라솰라 욜라욜라
+                어쩌구 저쩌구 솰라솰라 욜라욜라어쩌구 저쩌구 솰라솰라 욜라욜라어쩌구 저쩌구 솰라솰라 욜라욜라
+                어쩌구 저쩌구 솰라솰라 욜라욜라어쩌구 저쩌구 솰라솰라 욜라욜라어쩌구 저쩌구 솰라솰라 욜라욜라 끝
+                </div>
+                </div>
+            </div></td>
+            </tr>
+            </div></td>
+        </table>
+    </main>
+    <footer>
+        <table class="footer">
+            <tr>
+                <td><div class="sns">트위터</div></td>
+                <td><div class="sns">티스토리</div></td>
+                <td><div class="sns">인스타</div></td>
+                <td><div class="sns">오픈카톡</div></td>
+            </tr>
+        </table>
+    </footer>
+</body>
+</html>
